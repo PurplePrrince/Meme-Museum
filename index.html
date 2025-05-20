@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Музей Мемов</title>
+  <link rel="icon" href="img/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="img/logo.svg" alt="Логотип" class="logo">
+    <h1>Музей Мемов</h1>
+    <nav>
+      <ul>
+        <li><button data-category="math" class="active">Математические</button></li>
+        <li><button data-category="frog">Жабки</button></li>
+        <li><button data-category="cat">Котики</button></li>
+        <li><button data-category="other">Разное</button></li>
+      </ul>
+    </nav>
+    <input type="text" id="search" placeholder="Найди мем здесь" />
+  </header>
+
+  <main>
+    <section id="gallery" class="gallery"></section>
+  </main>
+
+  <footer>
+    <button id="add-meme-button">+</button>
+    <p>Музей Мемов 2025 &copy; Все права защищены</p>
+  </footer>
+
+  <!-- Modal for meme info -->
+  <div class="modal" id="meme-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modal-img" src="" alt="" />
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <p><strong>Год:</strong> <span id="modal-year"></span></p>
+      <p><strong>Источник:</strong> <span id="modal-source"></span></p>
+      <div class="rating-container">
+        <span class="rating-value">Рейтинг: <span id="modal-rating">0</span></span>
+        <span class="rating-stars" id="modal-stars"></span>
+        <div class="rating-buttons">
+          <button class="rating-btn like-btn" id="like-btn">💖</button>
+          <button class="rating-btn dislike-btn" id="dislike-btn">😡</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for adding meme -->
+  <div class="modal" id="add-meme-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Добавить мем</h2>
+      <form id="add-meme-form">
+        <input type="text" placeholder="Введите название мема" required />
+        <input type="number" placeholder="Введите год появления" required />
+        <input type="text" placeholder="Введите источник" required />
+        <textarea placeholder="Введите описание" required></textarea>
+        <input type="file" accept="image/*" required />
+        <button type="submit">Отправить</button>
+      </form>
+      <p id="thank-you" class="hidden">Спасибо за мем, если нам понравится мы его добавим</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
